@@ -7,7 +7,7 @@ To skip some bugs on the list of the admin section "pages" cf. https://github.co
 
 Include
 * Bootstrap 2.3 + Less files
-* FontAwesome 3.2 + Less file
+* FontAwesome 3.2 + Less files
 
 To do:
 * Media section, code js to add multiple file
