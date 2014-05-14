@@ -1,0 +1,86 @@
+<!-- BEGIN main_block -->
+
+<div class="row">
+  <div class="span12">
+    <ul class="block-grid-2">
+
+      <!-- BEGIN modules_block -->
+      <li class="block-grid-item" {DISPLAY_MODULES}>
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/modules_48.png" alt="{MODULES}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/modules/index.php">
+              {MODULES}
+            </a>
+          </h4>
+          <p>{MODULES_OVERVIEW}</p>
+        </div>
+      </li>
+      <!-- END modules_block -->
+
+      <!-- BEGIN templates_block -->
+      <li class="block-grid-item" {DISPLAY_TEMPLATES}>
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/templates_48.png" alt="{TEMPLATES}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/templates/index.php">
+              {TEMPLATES}
+            </a>
+          </h4>
+          <p>{TEMPLATES_OVERVIEW}</p>
+        </div>
+      </li>
+      <!-- END templates_block -->
+
+      <!-- BEGIN languages_block -->
+      <li class="block-grid-item" {DISPLAY_LANGUAGES}>
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/languages_50.png" alt="{LANGUAGES}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/languages/index.php">
+              {LANGUAGES}
+            </a>
+          </h4>
+          <p>{LANGUAGES_OVERVIEW}</p>
+        </div>
+      </li>
+      <!-- END languages_block -->
+
+      <!-- BEGIN reload_block -->
+      <li class="block-grid-item" {DISPLAY_RELOAD}>
+        <div class="item">
+          <a class="item-icon" href="#">
+            <img src="{THEME_URL}/images/admintools_50.png" alt="{TXT_ADMIN_SETTINGS}"/>
+          </a>
+
+          <div class="item-body">
+            <h4 class="item-heading">{TXT_ADMIN_SETTINGS}</h4>
+
+            <p>{MESSAGE_RELOAD_ADDONS}</p>
+
+            <form action="{RELOAD_URL}" method="post">
+              <input {DISPLAY_MODULES} type="checkbox" name="reload_modules" id="reload_modules" value="true"/>
+              <label {DISPLAY_MODULES} for="reload_modules">{MODULES}</label>
+              <input {DISPLAY_TEMPLATES} type="checkbox" name="reload_templates" id="reload_templates" value="true"/>
+              <label {DISPLAY_TEMPLATES} for="reload_templates">{TEMPLATES}</label>
+              <input {DISPLAY_LANGUAGES} type="checkbox" name="reload_languages" id="reload_languages" value="true"/>
+              <label {DISPLAY_LANGUAGES} for="reload_languages">{LANGUAGES}</label>
+              <input type="submit" name="submit" value="{TEXT_RELOAD}"/>
+            </form>
+          </div>
+        </div>
+      </li>
+      <!-- END reload_block -->
+
+    </ul>
+  </div>
+</div>
+
+
+<!-- END main_block -->

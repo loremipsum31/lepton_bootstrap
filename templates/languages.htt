@@ -1,0 +1,53 @@
+<!-- BEGIN main_block -->
+
+<div class="btn-group pull-right">
+  <a class="btn" href="{ADMIN_URL}/modules/index.php">Modules</a>
+  <a class="btn" href="{ADMIN_URL}/templates/index.php">Template</a>
+</div>
+
+<form name="install" enctype="multipart/form-data" action="install.php" method="post" class="{DISPLAY_INSTALL}">
+  <h2>{HEADING_INSTALL_LANGUAGE}</h2>
+
+  <div class="control-group">
+    <div class="controls">
+      <input type="file" name="userfile"/>
+      <script type="text/javascript">
+        document.install.userfile.focus();
+      </script>
+      <input class="btn btn-primary pull-right" type="submit" name="submit" value="{TEXT_INSTALL}"/>
+    </div>
+  </div>
+</form>
+
+<form name="uninstall" action="uninstall.php" method="post" class="{DISPLAY_UNINSTALL}">
+  <h2>{HEADING_UNINSTALL_LANGUAGE}</h2>
+
+  <div class="control-group">
+    <div class="controls">
+      <select name="code">
+        <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+        <!-- BEGIN language_list_block -->
+        <option value="{VALUE}">{NAME}</option>
+        <!-- END language_list_block -->
+      </select>
+      <input class="btn btn-danger pull-right" type="submit" name="submit" value="{TEXT_UNINSTALL}"/>
+    </div>
+  </div>
+</form>
+
+<form name="details" action="details.php" method="post" class="{DISPLAY_LIST}">
+  <h2>{HEADING_LANGUAGE_DETAILS}</h2>
+
+  <div class="control-group">
+    <div class="controls">
+      <select name="code">
+        <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+        <!-- BEGIN language_list_block -->
+        <option value="{VALUE}">{NAME}</option>
+        <!-- END language_list_block -->
+      </select>
+      <input class="btn btn-info pull-right" type="submit" name="submit" value="{TEXT_VIEW_DETAILS}"/>
+    </div>
+  </div>
+</form>
+<!-- END main_block -->

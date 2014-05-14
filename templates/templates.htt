@@ -1,0 +1,66 @@
+<!-- BEGIN main_block -->
+
+<div class="row">
+  <div class="span6">
+    <p>{CHANGE_TEMPLATE_NOTICE}</p>
+  </div>
+  <div class="span6">
+    <div class="btn-group pull-right">
+        {URL_MODULES}
+        {URL_LANGUAGES}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+
+    <form name="install" enctype="multipart/form-data" action="install.php" method="post"
+          class="{DISPLAY_INSTALL} form-horizontal">
+      <h2>{HEADING_INSTALL_TEMPLATE}</h2>
+
+      <div class="control-group">
+        <div class="controls">
+          <input type="file" name="userfile"/>
+          <script type="text/javascript">
+            document.install.userfile.focus();
+          </script>
+          <input class="btn btn-primary pull-right" type="submit" name="submit" value="{TEXT_INSTALL}"/>
+        </div>
+      </div>
+    </form>
+
+    <form name="uninstall" action="uninstall.php" method="post" class="{DISPLAY_UNINSTALL} form-horizontal">
+      <h2>{HEADING_UNINSTALL_TEMPLATE}</h2>
+
+      <div class="control-group">
+        <div class="controls">
+          <select name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN template_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END template_list_block -->
+          </select>
+          <input class="btn btn-danger pull-right" type="submit" name="submit" value="{TEXT_UNINSTALL}"/>
+        </div>
+      </div>
+    </form>
+
+    <form name="details" action="details.php" method="post" class="{DISPLAY_LIST} form-horizontal">
+      <h2>{HEADING_TEMPLATE_DETAILS}</h2>
+
+      <div class="control-group">
+        <div class="controls">
+          <select name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN template_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END template_list_block -->
+          </select>
+          <input class="btn btn-info pull-right" type="submit" name="submit" value="{TEXT_VIEW_DETAILS}"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- END main_block -->

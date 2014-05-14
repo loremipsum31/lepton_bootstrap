@@ -1,0 +1,72 @@
+<!-- BEGIN main_block -->
+
+
+<!-- BEGIN search_form_block -->
+
+<div id="{ID}" {DISPLAY_SEARCH}>
+  <form class="form-inline" action="{ADMIN_URL}/pages/index.php" method="post">
+    <fieldset>
+      <legend>{HEADING_SEARCH_PAGE}</legend>
+      <label for="terms">{TEXT_SEARCH_FOR}:</label>
+      <label class="radio">
+        <input type="radio" name="search_scope" value="title" {SEARCH_FOR_TITLE_CHECKED} /> {TEXT_PAGE_TITLE}
+      </label>
+      <label class="radio">
+        <input type="radio" name="search_scope" value="page" {SEARCH_FOR_PAGE_CHECKED} /> {TEXT_PAGE_ID}
+      </label>
+      <label class="radio">
+        <input type="radio" name="search_scope" value="section" {SEARCH_FOR_SECTION_CHECKED} /> {TEXT_SECTION_ID}
+      </label>
+      <input type="text" name="terms" value="{SEARCH_VALUE}" />
+      <input type="submit" name="search" class="btn btn-primary" value="{TEXT_SEARCH}" />
+
+      <!-- BEGIN search_result_block -->
+      <table class="table table-condensed table-striped">
+        <thead>
+        <tr>
+          <th>{TEXT_PAGE}</th>
+          <th>
+            <!-- BEGIN edit_search_result_block -->
+            <span class="pull-right">
+              <a href="{ADMIN_URL}/pages/modify.php?page_id={PAGE_ID}" title="{TEXT_MODIFY}">
+                <img src="{THEME_URL}/images/modify_16.png" alt="{TEXT_MODIFY}" />
+              </a>
+              <a href="{ADMIN_URL}/pages/settings.php?page_id={PAGE_ID}" title="{TEXT_SETTINGS}">
+                <img src="{THEME_URL}/images/settings_16.png" alt="{TEXT_SETTINGS}" />
+              </a>
+              <a href="{ADMIN_URL}/pages/sections.php?page_id={PAGE_ID}" title="{TEXT_SECTION}">
+                <img src="{THEME_URL}/images/noclock_16.png" alt="{TEXT_SECTION}" />
+              </a>
+            </span>
+            <!-- END edit_search_result_block -->
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- BEGIN search_result_loop_block -->
+        <tr>
+          <td>{TEXT_FIELD}</td>
+          <td>{DATA_FIELD}</td>
+        </tr>
+        <!-- END search_result_loop_block -->
+        </tbody>
+      </table>
+      <!-- END search_result_block -->
+
+      <!-- BEGIN search_empty_block -->
+      <p><strong>{TEXT_NONE_FOUND}</strong></p>
+      <!-- END search_empty_block -->
+
+
+    </fieldset>
+  </form>
+</div>
+<!-- END search_form_block -->
+
+
+
+
+
+
+
+<!-- END main_block -->

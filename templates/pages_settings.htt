@@ -1,0 +1,198 @@
+<!-- BEGIN main_block -->
+
+<script src="{ADMIN_URL}/pages/page_settings.js" type="text/javascript"></script>
+
+
+<div class="btn-group pull-right">
+  <a class="btn btn-small" href="{ADMIN_URL}/pages/modify.php?page_id={PAGE_ID}"><i class="fa fa-edit"></i> {TEXT_MODIFY_PAGE}</a>
+  <a class="btn btn-small" href="{ADMIN_URL}/pages/sections.php?page_id={PAGE_ID}" style="{DISPLAY_MANAGE_SECTIONS}"><i class="fa fa-list"></i>
+    {TEXT_MANAGE_SECTIONS}
+  </a>
+</div>
+
+<h2>{HEADING_MODIFY_PAGE_SETTINGS}</h2>
+<div class="well well-small clear_both">
+    <div class="row">
+        <div class="span12">
+            <!-- BEGIN show_modify_block -->
+            <p><span class="label label-info">ID: {PAGE_ID}</span> {TEXT_CURRENT_PAGE}: <b>{PAGE_TITLE}</b>
+                <br />
+                {LAST_MODIFIED} {MODIFIED_BY} <i class="fa fa-user"></i> ({MODIFIED_BY_USERNAME}) - <i class="fa fa-calendar"></i> {MODIFIED_WHEN}</p>
+            <!-- END show_modify_block -->
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" name="settings" action="settings2.php" method="post">
+  <input type="hidden" name="page_id" value="{PAGE_ID}"/>
+  <input type="hidden" name="leptoken" value="{LEPTOKEN}"/>
+  <fieldset>
+  <div class="row">
+    <div class="span6">
+        <div class="well ">
+            <div class="control-group">
+                <label class="control-label" for="page_title">{TEXT_PAGE_TITLE}:</label>
+
+                <div class="controls">
+                    <input type="text" id="page_title" name="page_title" value="{PAGE_TITLE}"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="menu_title">{TEXT_MENU_TITLE}:</label>
+
+                <div class="controls">
+                    <input type="text" id="menu_title" name="menu_title" value="{MENU_TITLE}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="link">URL:</label>
+
+                <div class="controls">
+                    <input type="text" id="link" name="link" value="{PAGE_LINK}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="parent">{TEXT_PARENT}:</label>
+
+                <div class="controls">
+                    <select id="parent" name="parent" onchange="return disabled_hack_for_ie(this);">
+                        <!-- BEGIN page_list_block2 -->
+                        <option value="{ID}"{SELECTED}
+                        style="background: {FLAG_ROOT_ICON} no-repeat center left; padding-left: 20px;">{TITLE}</option>
+                        <!-- END page_list_block2 -->
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="visibility">{TEXT_VISIBILITY}:</label>
+
+                <div class="controls">
+                    <select id="visibility" name="visibility" onchange="javascript: toggle_viewers();">
+                        <option value="public"{PUBLIC_SELECTED}
+                        style="background: url('{THEME_URL}/images/visible_16.png') no-repeat center left; padding-left: 20px;">{TEXT_PUBLIC}</option>
+                        <option value="private"{PRIVATE_SELECTED}
+                        style="background: url('{THEME_URL}/images/private_16.png') no-repeat center left; padding-left: 20px;">{TEXT_PRIVATE}</option>
+                        <option value="registered"{REGISTERED_SELECTED}
+                        style="background: url('{THEME_URL}/images/keys_16.png') no-repeat center left; padding-left: 20px;">{TEXT_REGISTERED}</option>
+                        <option value="hidden"{HIDDEN_SELECTED}
+                        style="background: url('{THEME_URL}/images/hidden_16.png') no-repeat center left; padding-left: 20px;">{TEXT_HIDDEN}</option>
+                        <option value="none"{NO_VIS_SELECTED}
+                        style="background: url('{THEME_URL}/images/none_16.png') no-repeat center left; padding-left: 20px;">{TEXT_NONE}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="description">{TEXT_DESCRIPTION}:</label>
+
+                <div class="controls">
+                    <textarea id="description" name="description" rows="5" style="width:100%">{DESCRIPTION}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="keywords">{TEXT_KEYWORDS}:</label>
+
+                <div class="controls">
+                    <textarea id="keywords" name="keywords" rows="5" style="width:100%">{KEYWORDS}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="target">{TEXT_TARGET}:</label>
+
+                <div class="controls">
+                    <select id="target" name="target">
+                        <!--  value="{TARGET}" -->
+                        <option value="_blank"{BLANK_SELECTED}>{TEXT_NEW_WINDOW}</option>
+                        <option value="_self"{SELF_SELECTED}>{TEXT_SAME_WINDOW}</option>
+                        <option value="_top"{TOP_SELECTED}>{TEXT_TOP_FRAME}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="template">{TEXT_TEMPLATE}:</label>
+
+                <div class="controls">
+                    <select id="template" name="template">
+                        <option value="">{TEXT_SYSTEM_DEFAULT}</option>
+                        <option value="">----------------------</option>
+                        <!-- BEGIN template_list_block -->
+                        <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END template_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="control-group" style="{DISPLAY_MENU_LIST}">
+                <label class="control-label" for="menu">{TEXT_MENU}:</label>
+
+                <div class="controls">
+                    <select id="menu" name="menu">
+                        <!-- BEGIN menu_list_block -->
+                        <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END menu_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="control-group" style="{DISPLAY_LANGUAGE_LIST}">
+                <label class="control-label" for="language">{TEXT_LANGUAGE}:</label>
+
+                <div class="controls">
+                    <select id="language" name="language">
+                        <!-- BEGIN language_list_block -->
+                        <option value="{VALUE}"{SELECTED}
+                        style="background: {FLAG_LANG_ICONS} no-repeat center left; padding-left: 20px;">{NAME}</option>
+                        <!-- END language_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="searching">{TEXT_SEARCHING}:</label>
+
+                <div class="controls">
+                    <select id="searching" name="searching">
+                        <option value="1">{TEXT_ENABLED}</option>
+                        <option value="0"{SEARCHING_DISABLED}>{TEXT_DISABLED}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="span6">
+        <div class="well">
+            <div class="control-group">
+                <label class="control-label">{TEXT_ADMINISTRATORS}:</label>
+
+                <div class="controls">
+                    <!-- BEGIN group_list_block -->
+                    <label class="checkbox">
+                        <input type="checkbox" name="admin_groups[]" id="admin_group_{ID}" value="{ID}"{CHECKED}{DISABLED} /> {NAME}
+                    </label>
+                    <!-- END group_list_block -->
+                </div>
+            </div>
+            <div id="allowed_viewers" class="control-group" style="{DISPLAY_VIEWERS}">
+                <label class="control-label">{TEXT_ALLOWED_VIEWERS}:</label>
+
+                <div class="controls">
+                    <!-- BEGIN group_list_block2 -->
+                    <label class="checkbox">
+                        <input type="checkbox" name="viewing_groups[]" id="viewing_group_{ID}"
+                               value="{ID}"{CHECKED}{DISABLED} /> {NAME}
+                    </label>
+                    <!-- END group_list_block2 -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  </fieldset>
+
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE} {SECTION_SETTINGS}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+  </div>
+</form>
+
+<!-- END main_block -->

@@ -1,0 +1,120 @@
+<!-- BEGIN main_block -->
+<div class="well {DISPLAY_ADD}">
+  <form class="form-horizontal" name="add" action="add.php" method="post">
+    <fieldset>
+      <legend>{HEADING_ADD_PAGE}</legend>
+      <div class="row-fluid">
+        <div class="span6">
+          <div class="control-group">
+            <label class="control-label" for="title">{TEXT_TITLE}:</label>
+            <div class="controls">
+              <input type="text" name="title" id="title" placeholder="{TEXT_TITLE}"/>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="type">{TEXT_TYPE}:</label>
+
+            <div class="controls">
+              <select id="type" name="type">
+                <!-- BEGIN module_list_block -->
+                <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                <!-- END module_list_block -->
+              </select>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="parent">{TEXT_PARENT}:</label>
+
+            <div class="controls">
+              <select id="parent" name="parent">
+                <!-- BEGIN page_list_block2 -->
+                <option value="{ID}"{DISABLED}
+                        style="background: {FLAG_ROOT_ICON} no-repeat center left; padding-left: 20px;">{TITLE}</option>
+                <!-- END page_list_block2 -->
+              </select>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="visibility">{TEXT_VISIBILITY}:</label>
+
+            <div class="controls">
+              <select id="visibility" name="visibility" onchange="javascript: toggle_viewers();">
+                <option value="public" selected='selected'
+                        style="background: url('{THEME_URL}/images/visible_16.png') no-repeat center left; padding-left: 20px;">{TEXT_PUBLIC}</option>
+                <option value="private"
+                        style="background: url('{THEME_URL}/images/private_16.png') no-repeat center left; padding-left: 20px;">{TEXT_PRIVATE}</option>
+                <option value="registered"
+                        style="background: url('{THEME_URL}/images/keys_16.png') no-repeat center left; padding-left: 20px;">{TEXT_REGISTERED}</option>
+                <option value="hidden"
+                        style="background: url('{THEME_URL}/images/hidden_16.png') no-repeat center left; padding-left: 20px;">{TEXT_HIDDEN}</option>
+                <option value="none"
+                        style="background: url('{THEME_URL}/images/none_16.png') no-repeat center left; padding-left: 20px;">{TEXT_NONE}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <div class="row">
+            <div class="span6">
+              <div class="control-group">
+                <fieldset>
+                  <legend>{TEXT_ADMINISTRATORS}</legend>
+                  <!-- BEGIN group_list_block -->
+                  <label class="checkbox" for="admin_group_{TOGGLE}">
+                    <input type="checkbox" name="admin_groups[]" id="admin_group_{ID}" value="{ID}"{CHECKED}{DISABLED} />
+                    {NAME}
+                  </label>
+                  <!-- END group_list_block -->
+                </fieldset>
+              </div>
+            </div>
+            <div class="span6">
+              <div class="control-group">
+                <fieldset>
+                  <legend>{TEXT_REGISTERED_VIEWERS}</legend>
+                  <!-- BEGIN group_list_block2 -->
+                  <label class="checkbox">
+                    <input type="checkbox" name="viewing_groups[]" id="viewing_group_{ID}" value="{ID}"{CHECKED}{DISABLED} /> {NAME}
+                  </label>
+                  <!-- END group_list_block2 -->
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="form-actions">
+              <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_ADD}"/>
+              <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="{DISPLAY_INTRO}">
+    <h2>{HEADING_MODIFY_INTRO_PAGE}</h2>
+    <a href="intro.php">{INTRO_LINK}</a>
+  </div>
+
+  <!-- Addition for remembering expanded state of pages -->
+  <script type="text/javascript">
+    var WB_URL = "{WB_URL}";
+    var THEME_URL = "{THEME_URL}";
+    var ADMIN_URL = "{ADMIN_URL}";
+  </script>
+  <script src="{ADMIN_URL}/pages/page_index.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function confirm_delete_page(message, url) {
+      if (confirm(message)) location.href = url + "&amp;leptokh=#-!leptoken-!#";
+    }
+  </script>
+</div>
+</div>
+
+<!-- END main_block -->

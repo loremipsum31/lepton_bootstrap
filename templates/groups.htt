@@ -1,0 +1,19 @@
+<!-- BEGIN main_block -->
+<a class="btn pull-right btn-small" href="{ADMIN_URL}/users/index.php"><i class="fa fa-user"></i> {TEXT_MANAGE_USERS}</a>
+
+
+<h2>{HEADING_MODIFY_DELETE_GROUP}</h2>
+<form class="form-inline well" name="groupsform" action="groups.php" method="post">
+  <input type="hidden" name="action" value="delete"/>
+
+  <select name="group_id" style="width: 500px;">
+    <!-- BEGIN list_block -->
+    <option value="{VALUE}">{NAME}</option>
+    <!-- END list_block -->
+  </select>
+  <input type="submit" name="modify" value="{TEXT_MODIFY}" class="{DISPLAY_MODIFY} btn btn-primary"/>
+  <input type="submit" name="delete" value="{TEXT_DELETE}" onclick="return confirm('{CONFIRM_DELETE}');"
+         class="btn btn-danger {DISPLAY_DELETE}"/>
+</form>
+<h2 class="{DISPLAY_ADD}">{HEADING_ADD_GROUP}</h2>
+<!-- END main_block -->

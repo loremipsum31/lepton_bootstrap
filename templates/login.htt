@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>{TEXT_LOGIN}</title>
+  <meta http-equiv="content-type" content="text/html; charset={CHARSET}"/>
+  <meta http-equiv="content-language" content="{LANGUAGE}"/>
+  <meta name="description" content="{TEXT_LOGIN}"/>
+  <meta name="keywords" content="{TEXT_LOGIN}"/>
+  <link href="{THEME_URL}/ext/bootstrap-23/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="container masterContainer">
+  <div class="row">
+    <div class="span6 offset3">
+      <h2>LEPTON Login Panel</h2>
+      <form class="form-horizontal well" action="{ACTION_URL}" method="post" name="login">
+        <input type="hidden" name="username_fieldname" value="{USERNAME_FIELDNAME}"/>
+        <input type="hidden" name="password_fieldname" value="{PASSWORD_FIELDNAME}"/>
+
+
+        <div class="control-group">
+          <label class="control-label" for="{USERNAME_FIELDNAME}">{TEXT_USERNAME}:</label>
+
+          <div class="controls">
+            <input type="text" maxlength="{MAX_USERNAME_LEN}" name="{USERNAME_FIELDNAME}" id="{USERNAME_FIELDNAME}"
+                   value="{USERNAME}"/>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="{PASSWORD_FIELDNAME}">{TEXT_PASSWORD}:</label>
+
+          <div class="controls">
+            <input type="password" maxlength="{MAX_PASSWORD_LEN}" name="{PASSWORD_FIELDNAME}"
+                   id="{PASSWORD_FIELDNAME}"/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_LOGIN}"/>
+
+          <div id="details-link">
+            <a href="{FORGOTTEN_DETAILS_APP}" class="forgot_pass">{TEXT_FORGOTTEN_DETAILS}</a>
+            <br/>
+            <a style="text-align:center;" href="{WB_URL}" target="_blank">{TEXT_HOME}</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span6 offset3">
+                <a href="http://www.lepton-cms.org" title="LEPTON CMS" target="_blank">LEPTON Core</a> is released under the
+                <a href="http://www.gnu.org/licenses/gpl.html" title="LEPTON Core is GPL" target="_blank">GNU General Public
+                    License</a>. <br/>
+
+                <a href="http://www.lepton-cms.org" title="LEPTON Package" target="_blank">LEPTON CMS Package</a> is
+                released under several different licenses.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

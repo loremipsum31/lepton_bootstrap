@@ -1,0 +1,26 @@
+<!-- BEGIN main_block -->
+
+<h2>{HEADING_LANGUAGE_DETAILS}</h2>
+
+<dl class="dl-horizontal">
+  <dt>{TEXT_NAME}:</dt>
+  <dd>{NAME}</dd>
+
+  <dt>{TEXT_CODE}:</dt>
+  <dd>{CODE}</dd>
+
+  <dt>{TEXT_AUTHOR}:</dt>
+  <dd>{AUTHOR}</dd>
+
+  <dt>{TEXT_VERSION}:</dt>
+  <dd>{VERSION}</dd>
+
+  <dt>{TEXT_DESIGNED_FOR}:</dt>
+  <dd>LEPTON {DESIGNED_FOR}</dd>
+
+  <dt>{TEXT_LICENSE}:</dt>
+  <dd>{LICENSE}</dd>
+</dl>
+
+<button class="btn" onclick="window.location = 'index.php';">{TEXT_BACK}</button>
+<!-- END main_block -->

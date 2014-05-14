@@ -1,0 +1,401 @@
+<!-- BEGIN main_block -->
+
+
+<form name="group" action="{ACTION_URL}" method="post" class="{DISPLAY_ADD} form-horizontal well">
+<input type="hidden" name="advanced" value="{ADVANCED}"/>
+<input type="hidden" name="group_id" value="{GROUP_ID}"/>
+  {FTAN}
+  <fieldset>
+    <div class="control-group">
+      <label class="control-label" for="group_name">{TEXT_NAME}:</label>
+
+      <div class="controls">
+        <input type="text" id="group_name" name="group_name" value="{GROUP_NAME}">
+      </div>
+    </div>
+    <div class="row-fluid" style="{DISPLAY_BASIC}">
+      <div class="span4">
+        <label class="checkbox">
+          <input type="checkbox" name="pages" value="1" {pages_checked} /> {SECTION_PAGES}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="templates" value="1" {templates_checked} /> {SECTION_TEMPLATES}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="users" value="1" {users_checked} /> {SECTION_USERS}
+        </label>
+      </div>
+      <div class="span4">
+        <label class="checkbox">
+          <input type="checkbox" name="media" value="1" {media_checked} /> {SECTION_MEDIA}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="languages" value="1" {languages_checked} /> {SECTION_LANGUAGES}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="groups" value="1" {groups_checked} /> {SECTION_GROUPS}
+        </label>
+      </div>
+      <div class="span4">
+        <label class="checkbox">
+          <input type="checkbox" name="modules" value="1" {modules_checked} /> {SECTION_MODULES}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="settings" value="1" {settings_checked} /> {SECTION_SETTINGS}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="admintools" value="1" {admintools_checked}
+                 onchange="at_on(this);"/> {SECTION_ADMINTOOLS}
+        </label>
+      </div>
+    </div>
+    <fieldset>
+      <legend style="{DISPLAY_ADVANCED}">{TEXT_SYSTEM_PERMISSIONS}</legend>
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_PAGES}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_view" value="1" {pages_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_settings" value="1" {pages_settings_checked} /> {TEXT_MODIFY_SETTINGS}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_intro" value="1" {pages_intro_checked} /> {HEADING_MODIFY_INTRO_PAGE}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_add" value="1" {pages_add_checked} /> {TEXT_ADD}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_add_l0" value="1" {pages_add_l0_checked} /> {TEXT_LEVEL} 0
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_modify" value="1" {pages_modify_checked} /> {TEXT_MODIFY_CONTENT}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="pages_delete" value="1" {pages_delete_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_MEDIA}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="media_view" value="1" {media_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="media_rename" value="1" {media_rename_checked} /> {TEXT_RENAME}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="media_create" value="1" {media_create_checked} /> {TEXT_CREATE_FOLDER}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="media_upload" value="1" {media_upload_checked} /> {TEXT_UPLOAD_FILES}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="media_delete" value="1" {media_delete_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_MODULES}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="modules_view" value="1" {modules_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="modules_uninstall" value="1" {modules_uninstall_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="modules_install" value="1" {modules_install_checked} /> {TEXT_ADD}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_TEMPLATES}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="templates_view" value="1" {templates_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="templates_uninstall" value="1" {templates_uninstall_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="templates_install" value="1" {templates_install_checked} /> {TEXT_ADD}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_LANGUAGES}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="languages_view" value="1" {languages_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="languages_uninstall" value="1" {languages_uninstall_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="languages_install" value="1" {languages_install_checked} /> {TEXT_ADD}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_SETTINGS}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="settings_basic" value="1" {settings_basic_checked} /> {TEXT_BASIC}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="settings_advanced" value="1" {settings_advanced_checked} /> {TEXT_ADVANCED}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_USERS}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="users_view" value="1" {users_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="users_modify" value="1" {users_modify_checked} /> {TEXT_MODIFY}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="users_add" value="1" {users_add_checked} /> {TEXT_ADD}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="users_delete" value="1" {users_delete_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_GROUPS}</legend>
+        <div class="row-fluid" style="{DISPLAY_ADVANCED}">
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="groups_view" value="1" {groups_view_checked} /> {TEXT_VIEW}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="groups_modify" value="1" {groups_modify_checked} /> {TEXT_MODIFY}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="groups_add" value="1" {groups_add_checked} /> {TEXT_ADD}
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="groups_delete" value="1" {groups_delete_checked} /> {TEXT_DELETE}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend style="{DISPLAY_ADVANCED}">{SECTION_ADMINTOOLS}</legend>
+        <div class="control-group" style="{DISPLAY_ADVANCED}">
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" name="admintools_settings"
+                     value="1" {admintools_settings_checked} /> {TEXT_MODIFY_SETTINGS}
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{TEXT_MODULE_PERMISSIONS}</legend>
+        <ul class="block-grid-3">
+          <!-- BEGIN module_list_block -->
+          <li class="block-grid-item">
+            <label class="checkbox">
+              <input type="checkbox" name="module_permissions[]" id="m_{VALUE}"
+                     value="{VALUE}" {CHECKED} {JS_ADDITIOM}/> {NAME}
+            </label>
+          </li>
+          <!-- END module_list_block -->
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>{ADMINTOOLS}</legend>
+        <ul class="block-grid-3">
+          <!-- BEGIN admintools_list_block -->
+          <li class="block-grid-item">
+            <label class="checkbox">
+              <input type="checkbox" name="module_permissions[]" id="m_{VALUE}"
+                     value="{VALUE}" {CHECKED} {JS_ADDITIOM}/> {NAME}
+            </label>
+          </li>
+          <!-- END admintools_list_block -->
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>{TEXT_TEMPLATE_PERMISSIONS}</legend>
+        <ul class="block-grid-3">
+          <!-- BEGIN template_list_block -->
+          <li class="block-grid-item">
+            <label class="checkbox">
+              <input type="checkbox" name="template_permissions[]" id="t_{TEMPLATE_VALUE}"
+                     value="{TEMPLATE_VALUE}" {CHECKED} /> {TEMPLATE_NAME}
+            </label>
+          </li>
+          <!-- END template_list_block -->
+        </ul>
+      </fieldset>
+    </fieldset>
+
+  </fieldset>
+
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{SUBMIT_TITLE}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+  </div>
+
+</form>
+
+
+<form name="advanced" action="{ADVANCED_ACTION}" method="post">
+  <input type="hidden" name="group_id" value="{GROUP_ID}"/>
+  <input type="hidden" name="action" value="modify"/>
+  <input class="btn btn-info" type="submit" name="advanced" onclick="window.location = '{ADVANCED_LINK}';"
+         value="{ADVANCED_BUTTON}"/>
+</form>
+
+
+<script type="text/javascript">
+  var admin_checkbox = document.getElementById("admintools");
+  var admin_settings = document.getElementById("admintools_settings");
+
+  var admin_tools = new Array({JS_ADMIN_TOOLS_ARRAY});
+  var admin_qr = new Array();
+  for (var i = 0; i < admin_tools.length; i++) {
+    admin_qr[ admin_tools[i] ] = document.getElementById(admin_tools[i]);
+  }
+  function check(aRef) {
+    if (aRef.checked == true) {
+      if (admin_checkbox) {
+        admin_checkbox.checked = true;
+        admin_settings.checked = true;
+      }
+    } else {
+      var state_counter = 0;
+      for (var i = 0; i < admin_tools.length; i++) {
+        var r = admin_qr[ admin_tools[i] ];
+        if (r) {
+          if (r.checked == true) state_counter++;
+        }
+      }
+      if (admin_checkbox) {
+        admin_checkbox.checked = (state_counter > 0);
+        admin_settings.checked = (state_counter > 0);
+      }
+    }
+  }
+  function at_on(aRef) {
+    for (var i = 0; i < admin_tools.length; i++) {
+      var r = admin_qr[ admin_tools[i] ];
+      if (r) {
+        r.checked = aRef.checked;
+      }
+    }
+  }
+</script>
+<!-- END main_block -->

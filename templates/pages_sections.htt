@@ -1,0 +1,122 @@
+<!-- BEGIN main_block -->
+<div class="btn-group pull-right">
+    <a class="btn btn-small" href="{ADMIN_URL}/pages/settings.php?page_id={PAGE_ID}"><i class="fa fa-cog"></i> {TEXT_CHANGE_SETTINGS}</a>
+  <a class="btn btn-small" href="{ADMIN_URL}/pages/modify.php?page_id={PAGE_ID}"><i class="fa fa-file"></i> {HEADING_MODIFY_PAGE}</a>
+</div>
+
+<h2>{HEADING_MANAGE_SECTIONS}</h2>
+
+<div class="well well-small clear_both">
+    <div class="row">
+        <div class="span12">
+            <p><span class="label label-info">ID: {PAGE_ID}</span> {TEXT_CURRENT_PAGE}: <b>{PAGE_TITLE}</b>
+                <br />
+                {LAST_MODIFIED} {MODIFIED_BY} <i class="fa fa-user"></i> ({MODIFIED_BY_USERNAME}) - <i class="fa fa-calendar"></i> {MODIFIED_WHEN}</p>
+            <!-- END show_modify_block -->
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" name="section_properties"
+      action="{ADMIN_URL}/pages/sections_save.php?page_id={VAR_PAGE_ID}" method="post">
+  <fieldset>
+
+
+    <table id="sections-list" class="table table-striped">
+      <thead>
+        <tr>
+          <th>{TEXT_TYPE}</th>
+          <th><span {STYLE_DISPLAY_SECTION_BLOCK}>{TEXT_BLOCK}&nbsp;</span></th>
+          <th>Name</th>
+          <th>{TEXT_PUBL_START_DATE}</th>
+          <th>{TEXT_PUBL_END_DATE}</th>
+          <th>{TEXT_ACTIONS}</th>
+          <th>ID</th>
+          <th {DISPLAY_DEBUG}>{TEXT_PID}</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- BEGIN section_block -->
+      <tr>
+        <td>
+          <input type="hidden" name="page_id" value="{VAR_PAGE_ID}"/>
+          <input type="hidden" name="section_id" value="{VAR_SECTION_ID}"/>
+          {LINK_MODIFY_URL_VAR_MODUL_NAME}
+        </td>
+        <td>
+          <span {STYLE_DISPLAY_SECTION_BLOCK}>
+            <select name="block{VAR_SECTION_ID}">
+              {SET_NONE_DISPLAY_OPTION}
+              <!-- BEGIN block_block -->
+              <option value="{VALUE}"{SELECTED}>{NAME}</option>
+              <!-- END block_block -->
+            </select>
+          </span>
+        </td>
+        <td><input type="text" value="{SECTION_NAME}" name="section_name[{VAR_SECTION_ID}]"/></td>
+        <td>
+          <input type="text" id="start_date{VAR_SECTION_ID}" name="start_date{VAR_SECTION_ID}"
+                 value="{VALUE_PUBL_START}"/>
+          <img src="{THEME_URL}/images/calendar_add_16.png" id="trigger_start{VAR_SECTION_ID}" style="cursor:pointer;"
+               title="{TEXT_CALENDAR}" alt="{TEXT_CALENDAR}"/>
+          <img src="{THEME_URL}/images/{CLOCK_DEL_16_PNG}" style="cursor:pointer;" alt="{TEXT_DELETE_DATE}"
+               title="{TEXT_DELETE_DATE}" onclick="document.section_properties.start_date{VAR_SECTION_ID}.value=''"/>
+        </td>
+
+        <td>
+          <input type="text" id="end_date{VAR_SECTION_ID}" name="end_date{VAR_SECTION_ID}" value="{VALUE_PUBL_END}"/>
+          <img src="{THEME_URL}/images/calendar_add_16.png" id="trigger_stop{VAR_SECTION_ID}" alt="{TEXT_CALENDAR}"
+               style="cursor: pointer;" title="{TEXT_CALENDAR}"/>
+          <img src="{THEME_URL}/images/{CLOCK_DEL_16_PNG}" style="cursor:pointer;" alt="{TEXT_DELETE_DATE}"
+               title="{TEXT_DELETE_DATE}" onclick="document.section_properties.end_date{VAR_SECTION_ID}.value=''"/>
+        </td>
+
+        <td style="white-space: nowrap">
+          {VAR_MOVE_UP_URL}
+          {VAR_MOVE_DOWN_URL}
+          <a href="javascript: confirm_link('{TEXT_ARE_YOU_SURE}', '{ADMIN_URL}/pages/sections.php?page_id={VAR_PAGE_ID}&amp;section_id={VAR_SECTION_ID}');">
+            <img src="{THEME_URL}/images/{DELETE_16_PNG}" alt="{TEXT_DELETE}"/>
+          </a>
+        </td>
+
+        <td>{VAR_SECTION_ID}</td>
+
+        <td {DISPLAY_DEBUG}>{POSITION}</td>
+      </tr>
+      <!-- END section_block -->
+      </tbody>
+    </table>
+    <input type="submit" name="save" value="{TEXT_SAVE}" class="btn btn-primary"/>
+  </fieldset>
+</form>
+
+<form class="form-inline" name="add" action="{ADMIN_URL}/pages/sections.php?page_id={VAR_PAGE_ID}" method="post">
+  <input type="hidden" name="page_id" value="{VAR_PAGE_ID}"/>
+  <fieldset>
+    <legend>{TEXT_ADD_SECTION}</legend>
+    <select name="module" class="input_large">
+      <!-- BEGIN module_block -->
+      <option value="{VALUE}"{SELECTED}>{NAME}</option>
+      <!-- END module_block -->
+    </select>
+    <input type="submit" name="submit" value="{TEXT_ADD}" class="btn btn-primary"/>
+  </fieldset>
+</form>
+
+<!-- BEGIN calendar_block -->
+<script type="text/javascript">
+  var section_id = '{VAR_SECTION_ID}';
+  var start_date = '{start_date}';
+  var end_date = '{end_date}';
+  var trigger_start = '{trigger_start}';
+  var trigger_end = '{trigger_end}';
+  var jscal_today = '{jscal_today}';
+  var jscal_ifformat = '{jscal_ifformat}';
+  var jscal_firstday = {jscal_firstday};
+  var showsTime = {showsTime};
+  var timeFormat = {timeFormat};
+</script>
+<script type="text/javascript" src="{ADMIN_URL}/pages/page_calendar.js"></script>
+<!-- END calendar_block -->
+
+<!-- END main_block -->

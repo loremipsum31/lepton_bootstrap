@@ -1,0 +1,23 @@
+<!-- BEGIN main_block -->
+<div class="btn-group pull-right">
+  <a class="btn btn-small" href="{ADMIN_URL}/pages/settings.php?page_id={PAGE_ID}"><i class="fa fa-cog"></i> {TEXT_CHANGE_SETTINGS}</a>
+  <!-- BEGIN show_section_block -->
+  <a class="btn btn-small" href="{ADMIN_URL}/pages/sections.php?page_id={PAGE_ID}" style="{DISPLAY_MANAGE_SECTIONS}">
+      <i class="fa fa-list"></i> {TEXT_MANAGE_SECTIONS}
+  </a>
+  <!-- END show_section_block -->
+</div>
+
+<h2>{HEADING_MODIFY_PAGE}</h2>
+
+<div class="well well-small clear_both">
+    <div class="row">
+      <div class="span12">
+          <p><span class="label label-info">ID: {PAGE_ID}</span> {TEXT_CURRENT_PAGE}: <b>{PAGE_TITLE}</b>
+              <br />
+              {LAST_MODIFIED} {MODIFIED_BY} <i class="fa fa-user"></i> ({MODIFIED_BY_USERNAME}) - <i class="fa fa-calendar"></i> {MODIFIED_WHEN}</p>
+        <!-- END show_modify_block -->
+      </div>
+    </div>
+</div>
+<!-- END main_block -->

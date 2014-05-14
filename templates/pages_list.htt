@@ -1,0 +1,43 @@
+<!-- BEGIN main_block -->
+<!-- BEGIN page_list_block -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('*[data-level]').each(function(){
+      var level = $(this).data('level');
+      var padding = 7;
+      if(level > 0)
+        padding = level*20;
+      $(this).css('padding-left', padding + 'px')
+    });
+  });
+</script>
+<div class="jsadmin hide"></div>
+<div class="pages_list">
+  <h2>{HEADING_MODIFY_DELETE_PAGE}</h2>
+  <table class="table">
+    <thead>
+    <tr class="pages_list_header">
+      <th class="header_list_menu_title">
+        {TEXT_VISIBILITY} / {TEXT_MENU_TITLE}:
+      </th>
+      <th class="header_list_page_title">
+        {TEXT_PAGE_TITLE}:
+      </th>
+      <th class="header_list_page_URL">
+        URL:
+      </th>
+      <th class="header_list_page_id">
+        ID:
+      </th>
+      <th class="header_list_actions">
+        {TEXT_ACTIONS}:
+      </th>
+    </tr>
+    </thead>
+  </table>
+
+  {PAGES_LIST_LOOP}
+
+</div>
+<!-- END page_list_block -->
+<!-- END main_block -->

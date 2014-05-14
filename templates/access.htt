@@ -1,0 +1,36 @@
+<!-- BEGIN main_block -->
+
+<div class="row">
+  <div class="span6">
+    <!-- BEGIN show_cmd_users_block -->
+    <div class="blockquote-box clearfix" {DISPLAY_USERS}>
+      <div class="square pull-left">
+        <img src="{THEME_URL}/images/users_50.png" alt="{USERS}"/>
+      </div>
+      <h4>
+        <a href="{ADMIN_URL}/users/index.php">
+          {USERS}
+        </a>
+      </h4>
+      <p>{USERS_OVERVIEW}</p>
+    </div>
+    <!-- END show_cmd_users_block -->
+  </div>
+  <div class="span6">
+    <!-- BEGIN show_cmd_groups_block -->
+    <div class="blockquote-box clearfix" {DISPLAY_GROUPS}>
+      <div class="square pull-left">
+        <img src="{THEME_URL}/images/groups_50.png" alt="{GROUPS}"/>
+      </div>
+      <h4>
+        <a href="{ADMIN_URL}/groups/index.php">
+          {GROUPS}
+        </a>
+      </h4>
+      <p>{GROUPS_OVERVIEW}</p>
+    </div>
+    <!-- END show_cmd_groups_block -->
+  </div>
+</div>
+
+<!-- END main_block -->

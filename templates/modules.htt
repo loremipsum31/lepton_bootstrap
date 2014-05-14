@@ -1,0 +1,127 @@
+<!-- BEGIN main_block -->
+
+<div class="btn-group pull-right">
+  <a class="btn btn-small" href="{ADMIN_URL}/templates/index.php"><i class="fa fa-desktop"></i> Template</a>
+  <a class="btn btn-small" href="{ADMIN_URL}/languages/index.php"><i class="fa fa-flag-o"></i> Languages</a>
+  <a class="btn btn-small" href="{ADMIN_URL}/modules/index.php?advanced"><i class="fa fa-flask"></i> Advanced</a>
+</div>
+
+
+<h2>{HEADING_INSTALL_MODULE}</h2>
+
+<form name="install" enctype="multipart/form-data" action="install.php" method="post" class="{DISPLAY_INSTALL}">
+  <div class="row">
+    <div class="span12">
+      <div class="control-group">
+        <div class="controls">
+          <input type="file" name="userfile" size="85%"/>
+          <script type="text/javascript">
+            document.install.userfile.focus();
+          </script>
+          <input class="btn btn-primary pull-right" type="submit" name="submit" value="{TEXT_INSTALL}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form name="uninstall" action="uninstall.php" method="post" class="{DISPLAY_UNINSTALL}">
+  <div class="row">
+    <div class="span12">
+      <h2>{HEADING_UNINSTALL_MODULE}</h2>
+
+      <div class="control-group">
+        <div class="controls">
+          <select name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN module_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END module_list_block -->
+          </select>
+          <input class="btn btn-danger pull-right" type="submit" name="submit" value="{TEXT_UNINSTALL}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<form name="details" action="details.php" method="post" class="{DISPLAY_LIST}">
+  <div class="row">
+    <div class="span12">
+      <h2>{HEADING_MODULE_DETAILS}</h2>
+
+      <div class="control-group">
+        <div class="controls">
+          <select name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN module_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END module_list_block -->
+          </select>
+          <input class="btn btn-info pull-right" type="submit" name="submit" value="{TEXT_VIEW_DETAILS}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row {DISPLAY_MANUAL_INSTALL}">
+  <div class="span12">
+    <h2>{HEADING_INVOKE_MODULE_FILES}</h2>
+
+    <p>{TEXT_MANUAL_INSTALLATION}</p>
+
+    <form name="details" action="manual_install.php" method="post" class="{INSTALL_VISIBLE} form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="file">{TEXT_FILE}: "install.php"</label>
+
+        <div class="controls">
+          <input type="hidden" name="action" value="install"/>
+          <select id="file" name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN install_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END install_list_block -->
+          </select>
+          <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_EXECUTE}"/>
+        </div>
+      </div>
+    </form>
+
+    <form name="details" action="manual_install.php" method="post" class="{UPGRADE_VISIBLE} form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="file">{TEXT_FILE}: "upgrade.php"</label>
+
+        <div class="controls">
+          <input type="hidden" name="action" value="upgrade"/>
+          <select id="file" name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN install_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END install_list_block -->
+          </select>
+          <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_EXECUTE}"/>
+        </div>
+      </div>
+    </form>
+
+    <form name="details" action="manual_install.php" method="post" class="{UNINSTALL_VISIBLE} form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="file">{TEXT_FILE}: "uninstall.php"</label>
+
+        <div class="controls">
+          <input type="hidden" name="action" value="uninstall"/>
+          <select id="file" name="file">
+            <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+            <!-- BEGIN install_list_block -->
+            <option value="{VALUE}">{NAME}</option>
+            <!-- END install_list_block -->
+          </select>
+          <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_EXECUTE}"/>
+        </div>
+      </div>
+    </form>
+    <div class="help-text text-error">{TEXT_MANUAL_INSTALLATION_WARNING}</div>
+  </div>
+</div>
+
+<!-- END main_block -->

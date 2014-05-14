@@ -1,0 +1,26 @@
+<!-- BEGIN main_block -->
+<div class="row">
+  <div class="span12">
+    <ul class="block-grid-2">
+      <!-- BEGIN tool_list_block -->
+      <li class="block-grid-item">
+
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/admintools_50.png" alt="{TOOL_NAME}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/admintools/tool.php?tool={TOOL_DIR}">
+              {TOOL_NAME}
+            </a>
+          </h4>
+          <p>{TOOL_DESCRIPTION}</p>
+        </div>
+
+      </li>
+      <!-- END tool_list_block -->
+    </ul>
+  </div>
+</div>
+{TOOL_LIST}
+<!-- END main_block -->

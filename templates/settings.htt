@@ -1,0 +1,699 @@
+<!-- BEGIN main_block -->
+<div class="row">
+  <div class="span12">
+
+<form class="form-horizontal" name="settings" action="save.php" method="post">
+<input type="hidden" name="advanced" value="{ADVANCED}"/>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#tab1" data-toggle="tab">{HEADING_GENERAL_SETTINGS}</a></li>
+  <li><a href="#tab2" data-toggle="tab">{HEADING_DEFAULT_SETTINGS}</a></li>
+  <li><a href="#tab3" data-toggle="tab">{HEADING_SEARCH_SETTINGS}</a></li>
+  <li><a href="#tab4" data-toggle="tab">{HEADING_SERVER_SETTINGS}</a></li>
+  <li><a href="#tab5" data-toggle="tab">{HEADING_WBMAILER_SETTINGS}</a></li>
+</ul>
+<div class="tab-content">
+<div id="tab1" class="tab-pane active">
+<fieldset>
+  <legend>{HEADING_GENERAL_SETTINGS}</legend>
+
+  <div class="control-group">
+    <label class="control-label" for="website_title">{TEXT_WEBSITE_TITLE}:</label>
+
+    <div class="controls">
+      <input type="text" id="website_title" name="website_title" value="{WEBSITE_TITLE}"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="backend_title">{TEXT_BACKEND_TITLE}:</label>
+
+    <div class="controls">
+      <input type="text" id="backend_title" name="backend_title" value="{BACKEND_TITLE}"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="website_description">{TEXT_WEBSITE_DESCRIPTION}:</label>
+
+    <div class="controls">
+      <textarea id="website_description" name="website_description" style="height: 100px;width:98%;" cols="80" rows="3">{WEBSITE_DESCRIPTION}</textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="website_keywords">{TEXT_WEBSITE_KEYWORDS}:</label>
+
+    <div class="controls">
+      <textarea id="website_keywords" name="website_keywords" style="height: 100px;width:98%;" cols="80" rows="3">{WEBSITE_KEYWORDS}</textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="website_header">{TEXT_WEBSITE_HEADER}:</label>
+
+    <div class="controls">
+      <textarea id="website_header" name="website_header" style="height: 100px;width:98%;" cols="80" rows="3">{WEBSITE_HEADER}</textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="website_footer">{TEXT_WEBSITE_FOOTER}:</label>
+
+    <div class="controls">
+      <textarea id="website_footer" name="website_footer" style="height: 100px;width:98%;" cols="80" rows="3">{WEBSITE_FOOTER}</textarea>
+    </div>
+  </div>
+  <!-- BEGIN show_page_level_limit_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label" for="page_level_limit">{TEXT_PAGE_LEVEL_LIMIT}:</label>
+
+    <div class="controls">
+      <select id="page_level_limit" name="page_level_limit">
+        <!-- BEGIN page_level_limit_list_block -->
+        <option value="{NUMBER}"{SELECTED}>{NUMBER}</option>
+        <!-- END page_level_limit_list_block -->
+      </select>
+    </div>
+  </div>
+  <!-- END show_page_level_limit_block -->
+  <div class="control-group">
+    <label class="control-label">{TEXT_PAGE_TRASH}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="page_trash" id="page_trash_disabled"
+               value="disabled"{PAGE_TRASH_DISABLED} /> {TEXT_DISABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="page_trash" id="page_trash_inline" value="inline"{PAGE_TRASH_INLINE} /> {TEXT_INLINE}
+      </label>
+    </div>
+  </div>
+  <!-- BEGIN show_checkbox_1_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label">{TEXT_PAGE_LANGUAGES}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="page_languages" id="page_languages_true"
+               value="true"{PAGE_LANGUAGES_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="page_languages" id="page_languages_false"
+               value="false"{PAGE_LANGUAGES_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label">{TEXT_MULTIPLE_MENUS}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="multiple_menus" id="multiple_menus_true"
+               value="true"{MULTIPLE_MENUS_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="multiple_menus" id="multiple_menus_false"
+               value="false"{MULTIPLE_MENUS_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- END show_checkbox_1_block -->
+  <div class="control-group">
+    <label class="control-label">{TEXT_HOME_FOLDERS}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="home_folders" id="home_folders_true"
+               value="true"{HOME_FOLDERS_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="home_folders" id="home_folders_false"
+               value="false"{HOME_FOLDERS_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- BEGIN show_checkbox_2_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label">{TEXT_MANAGE_SECTIONS}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="manage_sections" id="manage_sections_true"
+               value="true"{MANAGE_SECTIONS_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="manage_sections" id="manage_sections_false"
+               value="false"{MANAGE_SECTIONS_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label">{TEXT_SECTION_BLOCKS}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="section_blocks" id="section_blocks_true"
+               value="true"{SECTION_BLOCKS_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="section_blocks" id="section_blocks_false"
+               value="false"{SECTION_BLOCKS_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- END show_checkbox_2_block -->
+  <div class="control-group">
+    <label class="control-label">{TEXT_INTRO_PAGE}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="intro_page" id="intro_page_true" value="true"{INTRO_PAGE_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="intro_page" id="intro_page_false"
+               value="false"{INTRO_PAGE_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- BEGIN show_checkbox_3_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label">{TEXT_HOMEPAGE_REDIRECTION}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="homepage_redirection" id="homepage_redirection_true"
+               value="true"{HOMEPAGE_REDIRECTION_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="homepage_redirection" id="homepage_redirection_false"
+               value="false"{HOMEPAGE_REDIRECTION_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- END show_checkbox_3_block -->
+  <div class="control-group">
+    <label class="control-label">{TEXT_LOGIN}:</label>
+
+    <div class="controls">
+      <label class="radio">
+        <input type="radio" name="frontend_login" id="frontend_login_true"
+               value="true"{PRIVATE_ENABLED} /> {TEXT_ENABLED}
+      </label>
+      <label class="radio">
+        <input type="radio" name="frontend_login" id="frontend_login_false"
+               value="false"{PRIVATE_DISABLED} /> {TEXT_DISABLED}
+      </label>
+    </div>
+  </div>
+  <!-- BEGIN show_redirect_timer_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label" for="redirect_timer">{TEXT_REDIRECT_AFTER}:</label>
+
+    <div class="controls">
+      <input type="text" id="redirect_timer" name="redirect_timer" value="{REDIRECT_TIMER}"/>
+    </div>
+  </div>
+  <!-- END show_redirect_timer_block -->
+  <div class="control-group">
+    <label class="control-label" for="frontend_signup">{TEXT_SIGNUP}:</label>
+
+    <div class="controls">
+      <select id="frontend_signup" name="frontend_signup">
+        <option value="false">{TEXT_DISABLED}</option>
+        <!-- BEGIN group_list_block -->
+        <option value="{ID}" {SELECTED}>{NAME}</option>
+        <!-- END group_list_block -->
+      </select>
+    </div>
+  </div>
+  <!-- BEGIN show_php_error_level_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label" for="er_level">{TEXT_PHP_ERROR_LEVEL}:</label>
+
+    <div class="controls">
+      <select id="er_level" name="er_level">
+        <!-- BEGIN error_reporting_list_block -->
+        <option value="{VALUE}"{SELECTED}>{NAME}</option>
+        <!-- END error_reporting_list_block -->
+      </select>
+    </div>
+  </div>
+  <!-- END show_php_error_level_block -->
+  <!-- BEGIN show_wysiwyg_block -->
+  <div class="control-group" {DISPLAY_ADVANCED}>
+    <label class="control-label" for="wysiwyg_editor">{TEXT_WYSIWYG_EDITOR}:</label>
+
+    <div class="controls">
+      <select id="wysiwyg_editor" name="wysiwyg_editor">
+        <!-- BEGIN editor_list_block -->
+        <option value="{FILE}"{SELECTED}>{NAME}</option>
+        <!-- END editor_list_block -->
+      </select>
+    </div>
+  </div>
+  <!-- END show_wysiwyg_block -->
+</fieldset>
+<div class="form-actions">
+  <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE}"/>
+  <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+  <button name="advanced" value="{JS_ADVANCED}" title="{MODE_SWITCH_WARNING}"
+          onclick="window.location = '{ADVANCED_LINK}'; return false;"
+          class="{DISPLAY_ADVANCED_BUTTON} btn btn-info">{ADVANCED_BUTTON}</button>
+</div>
+</div>
+
+
+<div id="tab2" class="tab-pane">
+  <fieldset>
+    <legend>{HEADING_DEFAULT_SETTINGS}</legend>
+
+    <div class="control-group">
+      <label class="control-label" for="default_language">{TEXT_LANGUAGE}:</label>
+
+      <div class="controls">
+        <select id="default_language" name="default_language">
+          <!-- BEGIN language_list_block -->
+          <option value="{CODE}"{SELECTED}
+                  style="background: url({FLAG}.png) no-repeat center left; padding-left: 20px;">{NAME} ({CODE})
+          </option>
+          <!-- END language_list_block -->
+        </select>
+      </div>
+    </div>
+    <!-- BEGIN show_charset_block -->
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="default_charset">{TEXT_CHARSET}:</label>
+
+      <div class="controls">
+        <select id="default_charset" name="default_charset">
+          <option value="">{TEXT_PLEASE_SELECT}...</option>
+          <!-- BEGIN charset_list_block -->
+          <option value="{VALUE}" {SELECTED}>{NAME}</option>
+          <!-- END charset_list_block -->
+        </select>
+      </div>
+    </div>
+    <!-- END show_charset_block -->
+    <div class="control-group">
+      <label class="control-label" for="default_timezone_string">{TEXT_TIMEZONE}:</label>
+
+      <div class="controls">
+        <select id="default_timezone_string" name="default_timezone_string">
+          <option value="0">{TEXT_PLEASE_SELECT}...</option>
+          <!-- BEGIN timezone_list_block -->
+          <option {SELECTED}>{NAME}</option>
+          <!-- END timezone_list_block -->
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="default_date_format">{TEXT_DATE_FORMAT}:</label>
+
+      <div class="controls">
+        <select id="default_date_format" name="default_date_format">
+          <option value="M d Y">{TEXT_PLEASE_SELECT}...</option>
+          <!-- BEGIN date_format_list_block -->
+          <option value="{VALUE}" {SELECTED}>{NAME}</option>
+          <!-- END date_format_list_block -->
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="default_time_format">{TEXT_TIME_FORMAT}:</label>
+
+      <div class="controls">
+        <select id="default_time_format" name="default_time_format">
+          <option value="g:i A">{TEXT_PLEASE_SELECT}...</option>
+          <!-- BEGIN time_format_list_block -->
+          <option value="{VALUE}" {SELECTED}>{NAME}</option>
+          <!-- END time_format_list_block -->
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="default_template">{TEXT_TEMPLATE}:</label>
+
+      <div class="controls">
+        <select id="default_template" name="default_template">
+          <!-- BEGIN template_list_block -->
+          <option value="{FILE}"{SELECTED}>{NAME}</option>
+          <!-- END template_list_block -->
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="default_theme">{TEXT_THEME}:</label>
+
+      <div class="controls">
+        <select id="default_theme" name="default_theme">
+          <!-- BEGIN theme_list_block -->
+          <option value="{FILE}"{SELECTED}>{NAME}</option>
+          <!-- END theme_list_block -->
+        </select>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset {DISPLAY_ADVANCED}>
+    <legend>{HEADING_SECURITY_SETTINGS}</legend>
+    <div class="control-group">
+      <label class="control-label" for="leptoken_lifetime">{TEXT_LEPTOKEN_LIFETIME}:</label>
+
+      <div class="controls">
+        <input type="text" id="leptoken_lifetime" name="leptoken_lifetime" value="{LEPTOKEN_LIFETIME}"/>
+        <span class="help-block">{HELP_LEPTOKEN_LIFETIME}</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="max_attempts">{TEXT_MAX_ATTEMPTS}:</label>
+
+      <div class="controls">
+        <input type="text" id="max_attempts" name="max_attempts" value="{MAX_ATTEMPTS}"/>
+        <span class="help-block">{HELP_MAX_ATTEMPTS}</span>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+    <button class="btn btn-info {DISPLAY_ADVANCED_BUTTON}" name="advanced" value="{JS_ADVANCED}"
+            title="{MODE_SWITCH_WARNING}"
+            onclick="window.location = '{ADVANCED_LINK}'; return false;">{ADVANCED_BUTTON}</button>
+  </div>
+</div>
+
+
+<div id="tab3" class="tab-pane">
+  <fieldset>
+    <legend>{HEADING_SEARCH_SETTINGS}</legend>
+
+    <div class="control-group">
+      <label class="control-label" for="search">{TEXT_VISIBILITY}:</label>
+
+      <div class="controls">
+        <select id="search" name="search">
+          <option value="public">{TEXT_PUBLIC}</option>
+          <option value="private" {PRIVATE_SEARCH}>{TEXT_PRIVATE}</option>
+          <option value="registered" {REGISTERED_SEARCH}>{TEXT_REGISTERED}</option>
+          <option value="none" {NONE_SEARCH}>{TEXT_NONE}</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="search_template">{TEXT_TEMPLATE}:</label>
+
+      <div class="controls">
+        <select id="search_template" name="search_template">
+          <!-- BEGIN search_template_list_block -->
+          <option value="{FILE}"{SELECTED}>{NAME}</option>
+          <!-- END search_template_list_block -->
+        </select>
+      </div>
+    </div>
+    <!-- BEGIN show_search_block -->
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_header">{TEXT_HEADER}:</label>
+
+      <div class="controls">
+        <textarea id="search_header" name="search_header" style="height: 100px;width:98%;" cols="80"
+                  rows="3">{SEARCH_HEADER}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_results_header">{TEXT_RESULTS_HEADER}:</label>
+
+      <div class="controls">
+        <textarea id="search_results_header" name="search_results_header" style="height: 100px;width:98%;" cols="80"
+                  rows="3">{SEARCH_RESULTS_HEADER}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_results_loop">{TEXT_RESULTS_LOOP}:</label>
+
+      <div class="controls">
+        <textarea id="search_results_loop" name="search_results_loop" style="height: 100px;width:98%;" cols="80"
+                  rows="3">{SEARCH_RESULTS_LOOP}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_results_loop">{TEXT_RESULTS_FOOTER}:</label>
+
+      <div class="controls">
+        <textarea id="search_results_footer" name="search_results_footer" style="height: 100px;width:98%;" cols="80"
+                  rows="3">{SEARCH_RESULTS_FOOTER}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_results_loop">{TEXT_NO_RESULTS}:</label>
+
+      <div class="controls">
+        <textarea id="search_no_results" name="search_no_results" style="height: 100px;width:98%;" cols="80" rows="3">{SEARCH_NO_RESULTS}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_results_loop">{TEXT_FOOTER}:</label>
+
+      <div class="controls">
+        <textarea id="search_footer" name="search_footer" style="height: 100px;width:98%;" cols="80" rows="3">{SEARCH_FOOTER}</textarea>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_module_order">{TEXT_MODULE_ORDER}:</label>
+
+      <div class="controls">
+        <input type="text" id="search_module_order" name="search_module_order" value="{SEARCH_MODULE_ORDER}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_max_excerpt">{TEXT_MAX_EXCERPT}:</label>
+
+      <div class="controls">
+        <input type="text" id="search_max_excerpt" name="search_max_excerpt" value="{SEARCH_MAX_EXCERPT}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="search_time_limit">{TEXT_TIME_LIMIT}:</label>
+
+      <div class="controls">
+        <input type="text" id="search_time_limit" name="search_time_limit" value="{SEARCH_TIME_LIMIT}"/>
+      </div>
+    </div>
+    <!-- END show_search_block -->
+  </fieldset>
+  <!-- BEGIN search_footer_block -->
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+    <button class="btn btn-info {DISPLAY_ADVANCED_BUTTON}" name="advanced" value="{JS_ADVANCED}"
+            title="{MODE_SWITCH_WARNING}"
+            onclick="window.location = '{ADVANCED_LINK}'; return false;">{ADVANCED_BUTTON}</button>
+  </div>
+  <!-- END search_footer_block -->
+</div>
+
+<div id="tab4" class="tab-pane">
+  <fieldset>
+    <!-- BEGIN show_admin_block -->
+    <legend>{HEADING_SERVER_SETTINGS}</legend>
+
+    <div class="control-group">
+      <label class="control-label">{TEXT_SERVER_OPERATING_SYSTEM}:</label>
+
+      <div class="controls">
+        <label class="radio" onclick="document.getElementById('{BASIC_FILE_PERMS_ID}2').style.display = 'block';">
+          <input type="radio" name="operating_system" id="operating_system_linux"
+                 onclick="document.getElementById('{BASIC_FILE_PERMS_ID}2').style.display = 'block';"
+                 value="linux"{LINUX_SELECTED} /> {TEXT_LINUX_UNIX_BASED}
+        </label>
+        <label class="radio" onclick="document.getElementById('{BASIC_FILE_PERMS_ID}2').style.display = 'none';">
+          <input type="radio" name="operating_system" id="operating_system_windows"
+                 onclick="document.getElementById('{BASIC_FILE_PERMS_ID}2').style.display = 'none';"
+                 value="windows"{WINDOWS_SELECTED} /> {TEXT_WINDOWS}
+        </label>
+      </div>
+    </div>
+    <div id="{BASIC_FILE_PERMS_ID}2" class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" name="world_writeable" id="world_writeable"
+                 value="true"{WORLD_WRITEABLE_SELECTED} /> {TEXT_WORLD_WRITEABLE_FILE_PERMISSIONS} (777)
+        </label>
+
+        <div class="help-text text-error">{WORLD_WRITEABLE_WARNING}</div>
+      </div>
+    </div>
+    <!-- END show_admin_block -->
+    <!-- BEGIN show_access_block -->
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="pages_directory">{TEXT_PAGES_DIRECTORY}:</label>
+
+      <div class="controls">
+        <input type="text" id="pages_directory" name="pages_directory" value="{PAGES_DIRECTORY}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="media_directory">{TEXT_MEDIA_DIRECTORY}:</label>
+
+      <div class="controls">
+        <input type="text" id="media_directory" name="media_directory" value="{MEDIA_DIRECTORY}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="page_extension">{TEXT_PAGE_EXTENSION}:</label>
+
+      <div class="controls">
+        <input type="text" id="page_extension" name="page_extension" value="{PAGE_EXTENSION}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="page_spacer">{TEXT_PAGE_SPACER}:</label>
+
+      <div class="controls">
+        <input type="text" id="page_spacer" name="page_spacer" value="{PAGE_SPACER}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="rename_files_on_upload">{TEXT_RENAME_FILES_ON_UPLOAD}:</label>
+
+      <div class="controls">
+        <input type="text" id="rename_files_on_upload" name="rename_files_on_upload" value="{RENAME_FILES_ON_UPLOAD}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="app_name">{TEXT_SESSION_IDENTIFIER}:</label>
+
+      <div class="controls">
+        <input type="text" id="app_name" name="app_name" value="{APP_NAME}"/>
+      </div>
+    </div>
+    <div class="control-group" {DISPLAY_ADVANCED}>
+      <label class="control-label" for="sec_anchor">{TEXT_SEC_ANCHOR}:</label>
+
+      <div class="controls">
+        <input type="text" id="sec_anchor" name="sec_anchor" value="{SEC_ANCHOR}"/>
+      </div>
+    </div>
+    <!-- END show_access_block -->
+  </fieldset>
+  <!-- BEGIN access_footer_block -->
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+    <button class="btn btn-info {DISPLAY_ADVANCED_BUTTON}" name="advanced" value="{JS_ADVANCED}"
+            title="{MODE_SWITCH_WARNING}"
+            onclick="window.location = '{ADVANCED_LINK}'; return false;">{ADVANCED_BUTTON}</button>
+  </div>
+  <!-- END access_footer_block -->
+</div>
+
+<div id="tab5" class="tab-pane">
+  <fieldset>
+    <legend>{HEADING_WBMAILER_SETTINGS}</legend>
+    <!-- BEGIN mailer_settings_block -->
+    <p>{TEXT_WBMAILER_DEFAULT_SETTINGS_NOTICE}</p>
+
+    <div class="control-group">
+      <label class="control-label" for="server_email">{TEXT_WBMAILER_DEFAULT_SENDER_MAIL}:</label>
+
+      <div class="controls">
+        <input type="text" id="server_email" name="server_email" value="{SERVER_EMAIL}"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="wbmailer_default_sendername">{TEXT_WBMAILER_DEFAULT_SENDER_NAME}:</label>
+
+      <div class="controls">
+        <input type="text" id="wbmailer_default_sendername" name="wbmailer_default_sendername"
+               value="{WBMAILER_DEFAULT_SENDERNAME}"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">{TEXT_WBMAILER_FUNCTION}:</label>
+
+      <div class="controls">
+        <label class="radio">
+          <input type="radio" name="wbmailer_routine" id="wbmailer_routine_phpmail"
+                 onchange="change_wbmailer('phpmail');"
+                 value="phpmail"{PHPMAIL_SELECTED} /> {TEXT_WBMAILER_PHP}
+        </label>
+        <label class="radio">
+          <input type="radio" name="wbmailer_routine" id="wbmailer_routine_smtp"
+                 onchange="change_wbmailer('smtp');" value="smtp"{SMTPMAIL_SELECTED} /> {TEXT_WBMAILER_SMTP}
+        </label>
+      </div>
+    </div>
+    <!-- BEGIN smtp_mailer_settings_block -->
+    <fieldset class="smtp" {SMTP_VISIBILITY}>
+      <p>{TEXT_WBMAILER_NOTICE}</p>
+
+      <div class="control-group smtp">
+        <label class="control-label" for="wbmailer_smtp_host">{TEXT_WBMAILER_SMTP_HOST}:</label>
+
+        <div class="controls">
+          <input type="text" id="wbmailer_smtp_host" name="wbmailer_smtp_host" value="{WBMAILER_SMTP_HOST}"/>
+        </div>
+      </div>
+      <fieldset>
+        <legend>{TEXT_WBMAILER_SMTP_AUTH}</legend>
+        <div class="control-group smtp" {SMTP_VISIBILITY}>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" name="wbmailer_smtp_auth" id="wbmailer_smtp_auth"
+                     onchange="toggle_wbmailer_auth(this.value);" value="true"{SMTP_AUTH_SELECTED} />
+              ({TEXT_WBMAILER_SMTP_AUTH_NOTICE})
+            </label>
+          </div>
+        </div>
+        <div class="control-group smtp-auth" {SMTP_VISIBILITY_AUTH}>
+          <label class="control-label" for="wbmailer_smtp_username">{TEXT_WBMAILER_SMTP_USERNAME}:</label>
+
+          <div class="controls">
+            <input type="text" id="wbmailer_smtp_username" name="wbmailer_smtp_username"
+                   value="{WBMAILER_SMTP_USERNAME}"/>
+          </div>
+        </div>
+        <div class="control-group smtp-auth" {SMTP_VISIBILITY_AUTH}>
+          <label class="control-label" for="wbmailer_smtp_password">{TEXT_WBMAILER_SMTP_PASSWORD}:</label>
+
+          <div class="controls">
+            <input type="password" id="wbmailer_smtp_password" name="wbmailer_smtp_password"
+                   value="{WBMAILER_SMTP_PASSWORD}"/>
+          </div>
+        </div>
+      </fieldset>
+    </fieldset>
+    <!-- END smtp_mailer_settings_block -->
+    <!-- END mailer_settings_block -->
+  </fieldset>
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="submit" value="{TEXT_SAVE}"/>
+    <input class="btn" type="reset" name="reset" value="{TEXT_RESET}"/>
+    <!-- BEGIN send_testmail_block -->
+    <button class="btn btn-info" id="checkmail" name="checkmail"
+            onclick="send_testmail('{ADMIN_URL}/settings/ajax_testmail.php');return false;">{TEXT_WBMAILER_SENDTESTMAIL}</button>
+    <!-- END send_testmail_block -->
+    <button title="{MODE_SWITCH_WARNING}" onclick="window.location = '{ADVANCED_LINK}'; return false;"
+            class="{DISPLAY_ADVANCED_BUTTON} btn btn-info" value="{JS_ADVANCED}">{ADVANCED_BUTTON}</button>
+  </div>
+</div>
+</div>
+
+<div class="{DISPLAY_ADVANCED_BUTTON}">
+  <button title="{MODE_SWITCH_WARNING}" onclick="window.location = '{ADVANCED_LINK}'; return false;"
+          class="{DISPLAY_ADVANCED_BUTTON} btn btn-info" value="{JS_ADVANCED}">{ADVANCED_BUTTON}</button>
+  <br/>
+  {MODE_SWITCH_WARNING}
+</div>
+
+</form>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function change_wbmailer(type) {
+    if (type == 'phpmail')
+      $('.smtp').hide();
+    if (type == 'smtp')
+      $('.smtp').show();
+  }
+  function toggle_wbmailer_auth() {
+    $('.smtp-auth').toggle();
+  }
+</script>
+<!-- END main_block -->

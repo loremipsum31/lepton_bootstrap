@@ -1,0 +1,26 @@
+<strong class="up_link_dir{DISPLAY_UP_ARROW}">{TEXT_CURRENT_FOLDER}: {ROOT_DIRECTORY}{CURRENT_PATH}</strong>
+
+<form name="rename" action="index.php" method="post">
+  <input type="hidden" name="action" value="save_media_rename"/>
+  <input type="hidden" name="current_dir" value="{CURRENT_PATH}"/>
+  <input type="hidden" name="old_name" value="{BASENAME}"/>
+  <input type="hidden" name="extension" value="{FILE_EXT}"/>
+  <input type="hidden" name="filetype" value="{FILE_TYPE}"/>
+
+  <div class="control-group">
+    <label class="control-label" for="name"><strong>'{FILENAME}'</strong> {TEXT_RENAME} :</label>
+
+    <div class="controls">
+      <input type="text" id="name" name="name" value="{BASENAME}"/>
+      <script type="text/javascript">
+        document.rename.name.select();
+      </script>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="save" value="{TEXT_RENAME}"/>
+    <input class="btn" type="submit" name="cancel" value="{TEXT_CANCEL}"/>
+  </div>
+
+</form>

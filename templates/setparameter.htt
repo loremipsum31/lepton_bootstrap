@@ -1,0 +1,59 @@
+<p>{TEXT_HEADER}</p>
+
+<form class="form-horizontal" name="settings" method="post" action="index.php">
+  <input type="hidden" name="current_dir" value="{CURRENT_PATH}"/>
+  <input type="hidden" name="action" value="save_media_settings"/>
+
+
+  <div class="control-group">
+    <label class="control-label">{SETTINGS}:</label>
+
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" name="show_thumbs" value="true" {NO_SHOW_THUMBS_SELECTED} /> {NO_SHOW_THUMBS}
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="admin_only" value="true" {ADMIN_ONLY_SELECTED} /> {ADMIN_ONLY}<
+      </label>
+    </div>
+  </div>
+
+  <!-- BEGIN dir_settings_block -->
+  <fieldset class="row_{ROW_ID} hover {DISPLAY_NONE}">
+    <legend>{PATH_NAME}</legend>
+    <div class="control-group">
+      <label class="control-label">{WIDTH}:</label>
+
+      <div class="controls">
+        <input type="text" name="{FIELD_NAME}-w" value="{CUR_WIDTH}" onfocus="clean_up(this);" onblur="blur_up(this);"/>
+      </div>
+      <label class="control-label">{HEIGHT}:</label>
+
+      <div class="controls">
+        <input type="text" name="{FIELD_NAME}-h" value="{CUR_HEIGHT}" onfocus="clean_up(this);"
+               onblur="blur_up(this);"/>
+      </div>
+    </div>
+  </fieldset>
+  <!-- END dir_settings_block -->
+
+  <div class="form-actions">
+    <input class="btn btn-primary" type="submit" name="save" value="{SAVE_TEXT}"/>
+    <input class="btn" type="submit" name="cancel" value="{CANCEL}"/>
+    <input class="btn btn-info" type="reset" name="reset" value="{RESET}"/>
+  </div>
+</form>
+<script type="text/javascript">
+  function clean_up(aRef) {
+    if (aRef.value == "-") aRef.value = "";
+  }
+  function blur_up(aRef) {
+    if ((aRef.value == "") || (aRef.value == "0")) {
+      aRef.value = "-";
+    } else {
+      aRef.value = aRef.value.replace(/ /g, "");
+      var x = aRef.value * 1;
+      if (x < 0) aRef.value = x * -1;
+    }
+  }
+</script>

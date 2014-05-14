@@ -1,0 +1,106 @@
+<!-- BEGIN main_block -->
+<div class="alert" style="{DISPLAY_WARNING}">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Warning!</strong> {WARNING}
+</div>
+<h2>{WELCOME_MESSAGE}. {CURRENT_USER} {DISPLAY_NAME}.</h2>
+<div class="row">
+  <div class="span12">
+    <ul class="block-grid-2">
+      <li class="block-grid-item">
+
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/pages_48.png" alt="{PAGES}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/pages/index.php">
+              {PAGES}
+            </a>
+          </h4>
+          <p>{PAGES_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/settings_50.png" alt="{SETTINGS}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/settings/index.php">
+              {SETTINGS}
+            </a>
+          </h4>
+          <p>{SETTINGS_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/media_50.png" alt="{MEDIA}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/media/index.php">
+              {MEDIA}
+            </a>
+          </h4>
+          <p>{MEDIA_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/admintools_50.png" alt="{ADMINTOOLS}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/admintools/index.php">
+              {ADMINTOOLS}
+            </a>
+          </h4>
+          <p>{ADMINTOOLS_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/addons_50.png" alt="{ADDONS}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/addons/index.php">
+              {ADDONS}
+            </a>
+          </h4>
+          <p>{ADDONS_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/access_50.png" alt="{ACCESS}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/access/index.php">
+              {ACCESS}
+            </a>
+          </h4>
+          <p>{ACCESS_OVERVIEW}</p>
+        </div>
+      </li>
+      <li class="block-grid-item">
+        <div class="blockquote-box clearfix">
+          <div class="square pull-left">
+            <img src="{THEME_URL}/images/preferences_50.png" alt="{PREFERENCES}"/>
+          </div>
+          <h4>
+            <a href="{ADMIN_URL}/preferences/index.php">
+              {PREFERENCES}
+            </a>
+          </h4>
+          <p>{PREFERENCES_OVERVIEW}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- END main_block -->
